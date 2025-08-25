@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="image 1.png">
+    <title>అఖిల భారత చేనేత కార్మికుల సమాఖ్య</title>
+<style>
+  .grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(160px,1fr)); gap:10px}
+  .grid img{width:100%; height:140px; object-fit:cover; border-radius:10px; cursor:zoom-in}
+  .lightbox{
+    position:fixed; inset:0; background:rgba(0,0,0,.8);
+    display:none; align-items:center; justify-content:center; padding:20px;
+  }
+  .lightbox.open{display:flex}
+  .lightbox img{max-width:92vw; max-height:92vh; border-radius:12px}
+  .close{position:fixed; top:14px; right:18px; font:16px system-ui; color:#fff; cursor:pointer}
+</style>
+</head>
+<body>
+  <div class="grid">
+    <img src="./images/1.jpg" alt="Image 1">
+    <img src="images/2.jpg" alt="Image 2">
+    <img src="images/3.jpg" alt="Image 3">
+  </div>
+
+  <div class="lightbox" id="lb" onclick="closeLB()">
+    <span class="close">✕</span>
+    <img id="lbImg" src="" alt="">
+  </div>
+
+  <script>
+    const lb = document.getElementById('lb');
+    const lbImg = document.getElementById('lbImg');
+    document.querySelectorAll('.grid img').forEach(img=>{
+      img.addEventListener('click', e=>{
+        lbImg.src = e.target.src;
+        lbImg.alt = e.target.alt;
+        lb.classList.add('open');
+      });
+    });
+    function closeLB(){ lb.classList.remove('open'); lbImg.src=''; }
+    document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeLB(); });
+  </script>
+</body>
+</html>
