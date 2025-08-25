@@ -1,0 +1,121 @@
+*{
+    margin: 00;
+    padding: 00;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+:root{
+    --primary: #15b800; 
+}
+header.first-header{
+    background: #dfa397;
+    width : 100vw;
+    height: 10vh;
+}
+#logo {
+  display: box;
+  margin: 15px; 
+  float: left;
+  height: 80px;
+  width: 150px;
+  border-radius: 75%; /* makes it a rectangle */
+}
+header.second-header{
+    background: #72b1ae;
+    width: 100vw;
+    height: 10vh;
+}
+.banner{
+    font-size: 2.5rem;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif ;
+}
+nav ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+li{
+    padding: 0 10px;
+}
+li a{
+    /* border-bottom: 5px solid var(--primary); */
+    text-decoration: none;
+    position: relative;
+    color: #000000;
+    padding: 5px;
+}
+li a::after{
+    content: "";
+    border-bottom: 4px solid var(--primary);
+    bottom: 0;
+    transform: scaleX(0);
+    left: 0;
+    width: 100%;
+    position: absolute;
+    transform-origin: bottom right;
+    transition: transform 0.4s ease-out;
+}
+li a.active::after{
+    content: "";
+    border-bottom: 4px solid var(--primary);
+    bottom: 0;
+    transform: scaleX(1);
+    left: 0;
+    width: 100%;
+    position: absolute;
+}
+li a:hover::after{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+body {
+   font-family: "Noto Sans Telugu", Arial, sans-serif;
+   background: #f9f9f9;
+}
+.container {
+   max-width: 500px;
+   margin: 30px auto;
+   background: #d6785b;
+   padding: 24px;
+   border-radius: 8px;
+}
+h2 {
+   text-align: center; 
+   color: #532fb8;
+}
+label {
+   display: block;
+   margin-bottom: 8px;
+   font-weight: bold;
+}
+input, select, textarea {
+   width: 100%;
+   padding: 7px;
+   margin-bottom: 14px;
+   border-radius: 4px;
+   border: 1px solid #ccc;
+}
+button {
+   background: #fd9904;
+   color: #000000;
+   padding: 8px 22px;
+   border: none;
+   border-radius: 34px;
+   cursor: pointer; 
+
+}
+button:hover {
+   background: #df7676;
+}
+header.three-header{
+    background: #dacb77;
+    width : 100vw;
+    height: 10vh;
+}
+body {
+    background-image: url("background.jpg");
+    background-size: cover;        /* Make image cover the whole page */
+    background-repeat: no-repeat;  /* Do not tile the image */
+    background-position: center;   /* Center the image */
+}
